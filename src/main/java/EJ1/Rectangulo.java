@@ -1,3 +1,5 @@
+package EJ1;
+
 public class Rectangulo {
     public int longitud;
     public int ancho;

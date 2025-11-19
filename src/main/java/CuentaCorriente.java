@@ -1,8 +1,21 @@
 public class CuentaCorriente {
-    public int saldoInicial =0;
+    private double saldo;
+    private int contadorReintegros,numIngreso;
+// Constructor
+    public CuentaCorriente(double saldoInicial){
+    saldo=10.20;
+    }
 
-    private saldo() {
-        int Cantidad = saldoInicial;
+    private void setSaldo(double saldo) throws Miexception {
+        if (saldo<0){
+            throw new Miexception("Saldo no válido");
+
+        }
+    }
+
+    private static void Retirar(){
 
     }
+
+
 }
