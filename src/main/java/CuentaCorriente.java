@@ -3,7 +3,7 @@ public class CuentaCorriente {
     private int contadorReintegros,numIngreso;
 // Constructor
     public CuentaCorriente(double saldoInicial){
-    saldo=10.20;
+        saldo=saldoInicial;
     }
 
     private void setSaldo(double saldo) throws Miexception {
@@ -13,8 +13,15 @@ public class CuentaCorriente {
         }
     }
 
-    private static void Retirar(){
-
+    private void retirar(double cantidad) throws Miexception {
+        if (cantidad<0){
+            throw new Miexception("No puedes retirar una cantidad menor de 0");
+        }
+        if (cantidad>saldo){
+            throw new Miexception("No puedes retirar una cantidad mayor a la que tienes en tu cuenta");
+        }
+        saldo-=cantidad;
+        contadorReintegros++;
     }
 
 

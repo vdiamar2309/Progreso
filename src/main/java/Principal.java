@@ -1,22 +1,22 @@
 import java.util.Scanner;
+
 public class Principal {
 
-    public static String ayuda="¿Que acción quiere realizar? (Puede retirar, ingresar o ver tu saldo o salir)";
+    public static String ayuda = "¿Que acción quiere realizar? (Puede retirar, ingresar o ver tu saldo o salir)";
 
-    public static void main(){
-        CuentaCorriente c =new CuentaCorriente();
+    static void main() {
+        CuentaCorriente c = new CuentaCorriente(6.7);
         Scanner scanner = new Scanner(System.in);
-        System.out.print("> ");
-        String accion = scanner.nextLine();
+        boolean iniciar = true;
+
+        while (iniciar) {
+            System.out.print("> ");
+            String accion = scanner.nextLine();
 
 
-
-
-
-
-
-
-
-
+        }
     }
+
+
+}
 }
