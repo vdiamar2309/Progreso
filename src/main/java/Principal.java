@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+import MiEntradaSalida.MiEntradaSalida;
 public class Principal {
 
     public static String ayuda = "¿Que acción quiere realizar? (Puede retirar, ingresar o ver tu saldo o salir)";
@@ -16,12 +16,10 @@ public class Principal {
             String accion = scanner.nextLine();
             switch (accion) {
                 case "Retirar":
-                    System.out.println(retiro);
+                    int saldo = MiEntradaSalida.solicitarEntero(retiro);
 
+                    System.out.println(hecho);
             }
         }
-
-
     }
-
 }
