@@ -33,7 +33,7 @@ public class Principal {
 
                     break;
                 case "ingresar":
-                    int
+
             }
         }
     }
