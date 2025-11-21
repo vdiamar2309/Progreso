@@ -1,7 +1,7 @@
 public class   CuentaCorriente {
     private double saldo;
     private int contadorReintegros,numIngreso;
-    public double dineroFisico;
+    private double dineroFisico;
     // Constructor
     public CuentaCorriente(double saldoInicial){
         saldo=saldoInicial;
@@ -38,8 +38,11 @@ public class   CuentaCorriente {
         if (cantidad>dineroFisico){
             throw new Miexception("No puedes ingresar una cantidad mayor a la que tienes");
         }
+        saldo=dineroFisico;
+        dineroFisico-=cantidad;
         numIngreso++;
     }
+
 
     @Override
     public String toString() {

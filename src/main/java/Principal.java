@@ -11,9 +11,12 @@ public class Principal {
     static void main() {
         CuentaCorriente c = new CuentaCorriente(6);
         Scanner scanner = new Scanner(System.in);
+
         boolean iniciar = true;
+
         System.out.println("Bienvenido al Banco");
         System.out.println("Escribe man para abrir la ayuda");
+
         while (iniciar) {
             System.out.print("> ");
             String accion = scanner.nextLine();
@@ -22,17 +25,25 @@ public class Principal {
                     System.out.println(ayuda);
                     break;
                 case "retirar":
-                    int banco = MiEntradaSalida.solicitarEntero(retiro);
-                    double saldo = banco;
+
                     try {
-                        c.retirar(saldo);
+                        c.retirar(MiEntradaSalida.solicitarDecimal(retiro));
                         System.out.println(hecho);
                     } catch (Miexception e) {
                         System.out.println(e.getMessage());
                     }
-
                     break;
                 case "ingresar":
+                    try {
+                        c.ingresar(MiEntradaSalida.solicitarDecimal(retiro));
+                        System.out.println(hecho);
+                    } catch (Miexception e) {
+                        System.out.println(e.getMessage());
+                    }
+                break;
+                case "ver":
+                    System.out.println(c);
+                    break;
 
             }
         }
