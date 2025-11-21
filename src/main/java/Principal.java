@@ -7,7 +7,7 @@ public class Principal {
     public static String ayuda = "¿Que acción quiere realizar? (Puede retirar, ingresar o ver tu saldo o salir)";
     public static String retiro = "¿Cuanto desea retirar?";
     public static String hecho = "La acción ha sido realizada ¿quiere hacer alguna más?";
-
+    public static String ingresar = "¿Cuánto desea retirar?";
     static void main() {
         CuentaCorriente c = new CuentaCorriente(6);
         Scanner scanner = new Scanner(System.in);
@@ -35,16 +35,19 @@ public class Principal {
                     break;
                 case "ingresar":
                     try {
-                        c.ingresar(MiEntradaSalida.solicitarDecimal(retiro));
+                        c.ingresar(MiEntradaSalida.solicitarDecimal(ingresar));
                         System.out.println(hecho);
                     } catch (Miexception e) {
                         System.out.println(e.getMessage());
                     }
                 break;
-                case "ver":
+                case "ver","Ver":
                     System.out.println(c);
                     break;
-
+                case "Exit","Salir","salir","exit","quit","Quit":
+                    System.out.println("Adiós");
+                    iniciar=false;
+                    break;
             }
         }
     }

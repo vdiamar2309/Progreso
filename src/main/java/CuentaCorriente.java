@@ -22,8 +22,8 @@ public class   CuentaCorriente {
         if (cantidad>saldo){
             throw new Miexception("No puedes retirar una cantidad mayor a la que tienes en tu cuenta");
         }
-        saldo=dineroFisico;
         saldo-=cantidad;
+        dineroFisico=saldo;
         contadorReintegros++;
     }
 
@@ -38,7 +38,7 @@ public class   CuentaCorriente {
         if (cantidad>dineroFisico){
             throw new Miexception("No puedes ingresar una cantidad mayor a la que tienes");
         }
-        saldo=dineroFisico;
+        saldo=dineroFisico+saldo;
         dineroFisico-=cantidad;
         numIngreso++;
     }
