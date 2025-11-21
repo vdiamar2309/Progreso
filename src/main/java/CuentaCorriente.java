@@ -41,4 +41,13 @@ public class   CuentaCorriente {
         numIngreso++;
     }
 
+    @Override
+    public String toString() {
+        return "CuentaCorriente{" +
+                "saldo=" + saldo +
+                ", contadorReintegros=" + contadorReintegros +
+                ", numIngreso=" + numIngreso +
+                ", dineroFisico=" + dineroFisico +
+                '}';
+    }
 }

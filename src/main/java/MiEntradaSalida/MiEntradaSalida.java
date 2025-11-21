@@ -183,4 +183,38 @@ public class MiEntradaSalida {
         return cadena;
     }
 
+
+    public static double solicitarDecimal(String mensaje) {
+        // Variable que almacenará el decimal introducido por teclado.
+        double decimal = 0.000;
+        // Variable que almacenará un booleano que indicará si se le debe volver a pedir el dato al usuario.
+        boolean flag = true;
+        while (flag) {
+            // Pedimos el decimal por pantalla.
+            System.out.println(mensaje);
+            // Comprobamos si el usuario está introduciendo algo correcto.
+            try {
+                // *** CAMBIO CLAVE: Usamos Double.parseDouble() y almacenamos en 'double' ***
+                decimal = Double.parseDouble(sc.nextLine());
+
+                // Comprobamos la segunda condición: que sea positivo.
+                if (decimal >= 0) {
+                    // Si llegamos hasta aquí, el dato es correcto.
+                    flag = false;
+                } else {
+                    // 2. Mensaje de error específico (error de lógica, no de formato).
+                    System.out.println("Error: El número debe ser positivo o cero.");
+                }
+            }
+            // Si se lanza la excepción, informamos al usuario de su error.
+            catch (NumberFormatException e) {
+                // 2. Mensaje de error específico (error de formato).
+                System.out.println("Error: Debe introducir un número decimal válido.");
+            }
+        }
+
+        // Si se creó el Scanner temporalmente, se debe cerrar aquí (sc.close();)
+
+        return decimal;
+    }
 }
